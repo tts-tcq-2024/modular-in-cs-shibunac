@@ -1,4 +1,4 @@
-namespace 
+namespace TelCo.ColorCoder
 {
     /// <summary>
     /// Repository that holds the major and minor color mappings.
