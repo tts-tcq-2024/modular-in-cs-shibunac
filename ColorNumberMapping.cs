@@ -1,6 +1,6 @@
 using System;
 
-namespace TeleCom
+namespace TelCo.ColorCoder
 {
   /// <summary>
   /// Handles mapping between pair numbers and color pairs.
@@ -12,8 +12,8 @@ namespace TeleCom
 
     public ColorMapper()
     {
-      _majorSize = ColorRepository.MajorColors.Count;
-      _minorSize = ColorRepository.MinorColors.Count;
+      _majorSize = ColorLibrary.MajorColors.Count;
+      _minorSize = ColorLibrary.MinorColors.Count;
     }
 
     /// <summary>
@@ -49,8 +49,8 @@ namespace TeleCom
       if (pair == null)
         throw new ArgumentNullException(nameof(pair));
 
-      int majorIndex = ColorRepository.MajorColors.IndexOf(pair.MajorColor);
-      int minorIndex = ColorRepository.MinorColors.IndexOf(pair.MinorColor);
+      int majorIndex = ColorLibrary.MajorColors.IndexOf(pair.MajorColor);
+      int minorIndex = ColorLibrary.MinorColors.IndexOf(pair.MinorColor);
 
       if (majorIndex == -1 || minorIndex == -1)
       {
