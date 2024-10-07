@@ -1,18 +1,23 @@
-namespace TelCo.ColorCoder
+using System.Drawing;
+
+namespace ColorCoding
 {
+  
     /// <summary>
     /// Repository that holds the major and minor color mappings.
     /// </summary>
     public static class ColorLibrary
     {
-        public static readonly List<string> MajorColors = new List<string>
+      public static readonly List<Color> MajorColors = new List<Color>
         {
-            "White", "Red", "Black", "Yellow", "Violet"
+          Color.White, Color.Red, Color.Black, Color.Yellow, Color.Violet
         };
 
-        public static readonly List<string> MinorColors = new List<string>
+      public static readonly List<Color> MinorColors = new List<Color>
         {
-            "Blue", "Orange", "Green", "Brown", "SlateGray"
+          Color.Blue, Color.Orange, Color.Green, Color.Brown, Color.SlateGray
         };
     }
 }
+
+
