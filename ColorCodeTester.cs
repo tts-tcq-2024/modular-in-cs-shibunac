@@ -37,4 +37,23 @@ using System.Drawing;
    Assert.True(testPair1.MajorColor.Equals(Color.Violet));
    Assert.True(testPair1.MinorColor.Equals(Color.Green));
  }
-  }
+
+    [Fact]
+public static void ColorCodeTest4()
+{
+  var colorCodeMapper = new ColorCodeMapper();
+  ColorPair testPair2 = new ColorPair(Color.Yellow, Color.Green);
+  int pairNumber = colorCodeMapper.GetPairNumberFromColor(testPair2);
+  Assert.True(pairNumber == 18);
+}
+
+[Fact]
+public static void ColorCodeTest5()
+{
+  var colorCodeMapper = new ColorCodeMapper();
+  ColorPair testPair2 = new ColorPair(Color.Red, Color.Blue);
+  int pairNumber = colorCodeMapper.GetPairNumberFromColor(testPair2);
+  Assert.True(pairNumber == 6);
+}
+    
+}
