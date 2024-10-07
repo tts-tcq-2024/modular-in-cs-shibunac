@@ -1,4 +1,5 @@
-
+namespace TelCo.ColorCoder
+{
     /// <summary>
     /// Test class for the color code functionality.
     /// </summary>
