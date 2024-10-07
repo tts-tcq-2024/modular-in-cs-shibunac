@@ -1,6 +1,4 @@
-namespace TelCo.ColorCoder
-{
-/// <summary>
+    /// <summary>
     /// Represents a pair of colors.
     /// </summary>
     public class ColorPair
@@ -19,4 +17,3 @@ namespace TelCo.ColorCoder
             return $"MajorColor: {MajorColor.Name}, MinorColor: {MinorColor.Name}";
         }
     }
-}
