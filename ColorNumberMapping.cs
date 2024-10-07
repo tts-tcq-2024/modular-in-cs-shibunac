@@ -19,16 +19,10 @@ namespace ColorCoding
     /// <summary>
     /// Given a pair number, returns the corresponding ColorPair.
     /// </summary>
-    /// <param name="pairNumber">Pair number (1-based index).</param>
-    /// <returns>ColorPair corresponding to the pair number.</returns>
     public ColorPair GetColorFromPairNumber(int pairNumber)
     {
-      if (pairNumber < 1 || pairNumber > _majorSize * _minorSize)
-      {
-        throw new ArgumentOutOfRangeException(nameof(pairNumber),
-            $"Pair number must be between 1 and {_majorSize * _minorSize}.");
-      }
-
+     ValidatePairNumber(pairNumber);
+      
       int zeroBasedPairNumber = pairNumber - 1;
       int majorIndex = zeroBasedPairNumber / _minorSize;
       int minorIndex = zeroBasedPairNumber % _minorSize;
@@ -37,6 +31,15 @@ namespace ColorCoding
       Color minorColor = ColorLibrary.MinorColors[minorIndex];
 
       return new ColorPair(majorColor, minorColor);
+    }
+
+    private void ValidatePairNumber(int pairNumber)
+    {
+        if (pairNumber < 1 || pairNumber > _majorSize * _minorSize)
+        {
+            throw new ArgumentOutOfRangeException(nameof(pairNumber),
+                $"Pair number must be between 1 and {_majorSize * _minorSize}.");
+        }
     }
 
     /// <summary>
@@ -49,15 +52,19 @@ namespace ColorCoding
       if (pair == null)
         throw new ArgumentNullException(nameof(pair));
 
-      int majorIndex = ColorLibrary.MajorColors.IndexOf(pair.MajorColor);
-      int minorIndex = ColorLibrary.MinorColors.IndexOf(pair.MinorColor);
+      return GetPairNumber(pair);
+    }
+    private int GetPairNumber(ColorPair pair)
+    {
+        int majorIndex = ColorLibrary.MajorColors.IndexOf(pair.MajorColor);
+        int minorIndex = ColorLibrary.MinorColors.IndexOf(pair.MinorColor);
 
-      if (majorIndex == -1 || minorIndex == -1)
-      {
-        throw new ArgumentException($"Unknown Colors: {pair}");
-      }
+        if (majorIndex == -1 || minorIndex == -1)
+        {
+            throw new ArgumentException($"Unknown Colors: {pair}");
+        }
 
-      return (majorIndex * _minorSize) + (minorIndex + 1);
+        return (majorIndex * _minorSize) + (minorIndex + 1);
     }
   }
 }
