@@ -2,7 +2,6 @@ using System.Drawing;
 
 namespace ColorCoding
 {
-  
     /// <summary>
     /// Repository that holds the major and minor color mappings.
     /// </summary>
