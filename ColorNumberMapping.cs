@@ -5,12 +5,12 @@ namespace TelCo.ColorCoder
   /// <summary>
   /// Handles mapping between pair numbers and color pairs.
   /// </summary>
-  public class ColorMapper
+  public class ColorCodeMapper
   {
     private readonly int _majorSize;
     private readonly int _minorSize;
 
-    public ColorMapper()
+    public ColorCodeMapper()
     {
       _majorSize = ColorLibrary.MajorColors.Count;
       _minorSize = ColorLibrary.MinorColors.Count;
