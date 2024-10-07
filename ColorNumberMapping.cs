@@ -1,6 +1,7 @@
 using System;
+using System.Drawing;
 
-namespace TelCo.ColorCoder
+namespace ColorCoding
 {
   /// <summary>
   /// Handles mapping between pair numbers and color pairs.
@@ -33,8 +34,8 @@ namespace TelCo.ColorCoder
       int majorIndex = zeroBasedPairNumber / _minorSize;
       int minorIndex = zeroBasedPairNumber % _minorSize;
 
-      string majorColor = ColorRepository.MajorColors[majorIndex];
-      string minorColor = ColorRepository.MinorColors[minorIndex];
+      Color majorColor = ColorLibrary.MajorColors[majorIndex];
+      Color minorColor = ColorLibrary.MinorColors[minorIndex];
 
       return new ColorPair(majorColor, minorColor);
     }
