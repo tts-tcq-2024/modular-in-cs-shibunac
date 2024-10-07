@@ -20,5 +20,6 @@ namespace ColorCoding
     {
       return $"MajorColor: {MajorColor.Name}, MinorColor: {MinorColor.Name}";
     }
+    
   }
 }
