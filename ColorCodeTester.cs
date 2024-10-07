@@ -8,8 +8,6 @@ using System.Drawing;
   /// </summary>
   public class ColorCodeTester
   {
-
-
   [Fact]
     public static void ColorCodeTest1()
     {
