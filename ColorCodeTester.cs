@@ -8,18 +8,27 @@ using System.Drawing;
   /// </summary>
   public class ColorCodeTester
   {
-  [Fact]
-    public static void ColorCodeTest1()
+    public void RunTest()
     {
-      var colorCodeMapper = new ColorCodeMapper();
-      int pairNumber = 4;
-      ColorPair testPair1 = colorCodeMapper.GetColorFromPairNumber(pairNumber);
-      Assert.Equal(testPair1.MajorColor , Color.White);
-      Assert.Equal(testPair1.MinorColor ,(Color.Brown));
+      TestColorPairGivenPairNumber();
+      TestColorPairGivenPairNumber2();
+      TestColorPairGivenPairNumberTwoDigit();
+      TestPairNumberGivenColorPair();
+      TestPairNumberGivenColorPair2();
     }
+    
+  [Fact]
+  public void TestColorPairGivenPairNumber()
+  {
+    var colorCodeMapper = new ColorCodeMapper();
+    int pairNumber = 4;
+    ColorPair testPair1 = colorCodeMapper.GetColorFromPairNumber(pairNumber);
+    Assert.Equal(testPair1.MajorColor , Color.White);
+    Assert.Equal(testPair1.MinorColor ,(Color.Brown));
+  }
 
  [Fact]
- public static void ColorCodeTest2()
+ public void TestColorPairGivenPairNumber2()
  {
    var colorCodeMapper = new ColorCodeMapper();
    int pairNumber = 5;
@@ -29,7 +38,7 @@ using System.Drawing;
  }
 
  [Fact]
- public static void ColorCodeTest3()
+ public void TestColorPairGivenPairNumberTwoDigit()
  {
    var colorCodeMapper = new ColorCodeMapper();
    int pairNumber = 23;
@@ -39,7 +48,7 @@ using System.Drawing;
  }
 
     [Fact]
-public static void ColorCodeTest4()
+public void TestPairNumberGivenColorPair()
 {
   var colorCodeMapper = new ColorCodeMapper();
   ColorPair testPair2 = new ColorPair(Color.Yellow, Color.Green);
@@ -48,7 +57,7 @@ public static void ColorCodeTest4()
 }
 
 [Fact]
-public static void ColorCodeTest5()
+public void TestPairNumberGivenColorPair2()
 {
   var colorCodeMapper = new ColorCodeMapper();
   ColorPair testPair2 = new ColorPair(Color.Red, Color.Blue);
