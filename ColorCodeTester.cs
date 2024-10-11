@@ -5,7 +5,7 @@ using System.Drawing;
 /// <summary>
 /// Test class for the color code functionality.
 /// </summary>
-public class ColorCodeTester
+public class TestColorCode
 {
 
   public void RunPairNumberToColorTests()
