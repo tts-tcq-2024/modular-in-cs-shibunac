@@ -29,6 +29,7 @@ public class TestColorCode
     actualPair = mapper.GetColorFromPairNumber(pairNumber);
     Debug.Assert(actualPair.Equals(expectedPair), $"Test Failed: Expected {expectedPair}, Got {actualPair}");
   }
+  
   public void RunColorToPairNumberTests()
   {
     // Test Case 1
