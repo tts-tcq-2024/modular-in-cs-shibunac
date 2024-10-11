@@ -21,12 +21,10 @@ namespace ColorCoding
     /// </summary>
     public ColorPair GetColorFromPairNumber(int pairNumber)
     {
-     ValidatePairNumber(pairNumber);
-      
+      ValidatePairNumber(pairNumber);
       int zeroBasedPairNumber = pairNumber - 1;
       int majorIndex = zeroBasedPairNumber / _minorSize;
       int minorIndex = zeroBasedPairNumber % _minorSize;
-
       Color majorColor = ColorLibrary.MajorColors[majorIndex];
       Color minorColor = ColorLibrary.MinorColors[minorIndex];
 
@@ -51,9 +49,9 @@ namespace ColorCoding
     {
       if (pair == null)
         throw new ArgumentNullException(nameof(pair));
-
       return GetPairNumber(pair);
     }
+    
     private int GetPairNumber(ColorPair pair)
     {
         int majorIndex = ColorLibrary.MajorColors.IndexOf(pair.MajorColor);
