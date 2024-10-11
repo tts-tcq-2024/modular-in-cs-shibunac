@@ -6,7 +6,8 @@ using System.Drawing;
   /// </summary>
   public class ColorCodeTester
   {
-   public void RunPairNumberToColorTests(ColorCodeMapper mapper)
+    var mapper = new ColorCodeMapper();
+   public void RunPairNumberToColorTests()
   {
   // Test Case 1
   int pairNumber = 4;
@@ -26,7 +27,7 @@ using System.Drawing;
   actualPair = mapper.GetColorFromPairNumber(pairNumber);
   Debug.Assert(actualPair.Equals(expectedPair), $"Test Failed: Expected {expectedPair}, Got {actualPair}");
   }
-    public void RunColorToPairNumberTests(ColorCodeMapper mapper)
+    public void RunColorToPairNumberTests()
 {
   // Test Case 1
   ColorPair testPair = new ColorPair("Yellow", "Green");
