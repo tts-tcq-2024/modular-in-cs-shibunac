@@ -10,6 +10,7 @@ namespace ColorCoding
   {
     private readonly int _majorSize;
     private readonly int _minorSize;
+    
     public ColorCodeMapper()
     {
       _majorSize = ColorLibrary.MajorColors.Count;
