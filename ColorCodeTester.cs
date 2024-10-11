@@ -8,32 +8,39 @@ using System.Drawing;
   /// </summary>
   public class ColorCodeTester
   {
-  [Fact]
-  public void TestColorPairGivenPairNumber()
+   private static void RunPairNumberToColorTests(ColorCodeMapper mapper)
   {
-    var colorCodeMapper = new ColorCodeMapper();
-    int pairNumber = 4;
-    ColorPair testPair1 = colorCodeMapper.GetColorFromPairNumber(pairNumber);
-    Assert.Equal(testPair1.MajorColor , Color.White);
-    Assert.Equal(testPair1.MinorColor ,(Color.Brown));
+  // Test Case 1
+  int pairNumber = 4;
+  ColorPair expectedPair = new ColorPair("White", "Brown");
+  ColorPair actualPair = mapper.GetColorFromPairNumber(pairNumber);
+  Debug.Assert(actualPair.Equals(expectedPair), $"Test Failed: Expected {expectedPair}, Got {actualPair}");
+
+  // Test Case 2
+  pairNumber = 5;
+  expectedPair = new ColorPair("White", "SlateGray");
+  actualPair = mapper.GetColorFromPairNumber(pairNumber);
+  Debug.Assert(actualPair.Equals(expectedPair), $"Test Failed: Expected {expectedPair}, Got {actualPair}");
+
+  // Test Case 3
+  pairNumber = 23;
+  expectedPair = new ColorPair("Violet", "Green");
+  actualPair = mapper.GetColorFromPairNumber(pairNumber);
+  Debug.Assert(actualPair.Equals(expectedPair), $"Test Failed: Expected {expectedPair}, Got {actualPair}");
   }
-
- [Fact]
- public void TestColorPairGivenPairNumberTwoDigit()
- {
-   var colorCodeMapper = new ColorCodeMapper();
-   int pairNumber = 23;
-   ColorPair testPair1 = colorCodeMapper.GetColorFromPairNumber(pairNumber);
-   Assert.True(testPair1.MajorColor.Equals(Color.Violet));
-   Assert.True(testPair1.MinorColor.Equals(Color.Green));
- }
-
-    [Fact]
-public void TestPairNumberGivenColorPair()
+    private static void RunColorToPairNumberTests(ColorCodeMapper mapper)
 {
-  var colorCodeMapper = new ColorCodeMapper();
-  ColorPair testPair2 = new ColorPair(Color.Yellow, Color.Green);
-  int pairNumber = colorCodeMapper.GetPairNumberFromColor(testPair2);
-  Assert.True(pairNumber == 18);
+  // Test Case 1
+  ColorPair testPair = new ColorPair("Yellow", "Green");
+  int expectedPairNumber = 18;
+  int actualPairNumber = mapper.GetPairNumberFromColor(testPair);
+  Debug.Assert(actualPairNumber == expectedPairNumber, $"Test Failed: Expected {expectedPairNumber}, Got {actualPairNumber}");
+
+  // Test Case 2
+  testPair = new ColorPair("Red", "Blue");
+  expectedPairNumber = 6;
+  actualPairNumber = mapper.GetPairNumberFromColor(testPair);
+  Debug.Assert(actualPairNumber == expectedPairNumber, $"Test Failed: Expected {expectedPairNumber}, Got {actualPairNumber}");
 }
+  }
 }
