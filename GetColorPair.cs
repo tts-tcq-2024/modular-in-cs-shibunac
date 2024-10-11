@@ -21,5 +21,20 @@ namespace ColorCoding
       return $"MajorColor: {MajorColor.Name}, MinorColor: {MinorColor.Name}";
     }
     
+    // Override Equals to compare values
+    public override bool Equals(object obj)
+    {
+        if (obj is ColorPair otherPair)
+        {
+            return this.MajorColor == otherPair.MajorColor && this.MinorColor == otherPair.MinorColor;
+        }
+        return false;
+    }
+
+    // Override GetHashCode for consistency with Equals
+    public override int GetHashCode()
+    {
+        return (MajorColor, MinorColor).GetHashCode();
+    }
   }
 }
