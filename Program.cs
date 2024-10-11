@@ -4,7 +4,7 @@ namespace ColorCoding
 {
   public static void Main(string[] args)
   {
-    var colorCodeTest = new ColorCodeTester();
+    ColorCodeTester colorCodeTest = new ColorCodeTester();
     colorCodeTest.RunPairNumberToColorTests();
     colorCodeTest.RunColorToPairNumberTests();
     
