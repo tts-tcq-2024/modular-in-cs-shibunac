@@ -5,7 +5,10 @@ namespace ColorCoding
   public static void Main(string[] args)
   {
     var colorCodeTest = new ColorCodeTester();
-    colorCodeTest.RunTest();
+     colorCodeTest.TestColorPairGivenPairNumber();
+     colorCodeTest.TestColorPairGivenPairNumberTwoDigit();
+     colorCodeTest.TestPairNumberGivenColorPair();
+    
   }
 }
 
