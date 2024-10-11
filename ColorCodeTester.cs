@@ -8,13 +8,6 @@ using System.Drawing;
   /// </summary>
   public class ColorCodeTester
   {
-    public void RunTest()
-    {
-      TestColorPairGivenPairNumber();
-      TestColorPairGivenPairNumberTwoDigit();
-      TestPairNumberGivenColorPair();
-    }
-    
   [Fact]
   public void TestColorPairGivenPairNumber()
   {
