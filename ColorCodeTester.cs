@@ -1,5 +1,3 @@
-using Xunit;
-using ColorCoding;
 using System.Diagnostics;
 using System.Drawing;
 
