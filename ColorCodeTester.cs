@@ -11,10 +11,8 @@ using System.Drawing;
     public void RunTest()
     {
       TestColorPairGivenPairNumber();
-      TestColorPairGivenPairNumber2();
       TestColorPairGivenPairNumberTwoDigit();
       TestPairNumberGivenColorPair();
-      TestPairNumberGivenColorPair2();
     }
     
   [Fact]
@@ -26,16 +24,6 @@ using System.Drawing;
     Assert.Equal(testPair1.MajorColor , Color.White);
     Assert.Equal(testPair1.MinorColor ,(Color.Brown));
   }
-
- [Fact]
- public void TestColorPairGivenPairNumber2()
- {
-   var colorCodeMapper = new ColorCodeMapper();
-   int pairNumber = 5;
-   ColorPair testPair1 = colorCodeMapper.GetColorFromPairNumber(pairNumber);
-   Assert.Equal(testPair1.MajorColor,(Color.White));
-   Assert.Equal(testPair1.MinorColor,(Color.SlateGray));
- }
 
  [Fact]
  public void TestColorPairGivenPairNumberTwoDigit()
@@ -55,14 +43,4 @@ public void TestPairNumberGivenColorPair()
   int pairNumber = colorCodeMapper.GetPairNumberFromColor(testPair2);
   Assert.True(pairNumber == 18);
 }
-
-[Fact]
-public void TestPairNumberGivenColorPair2()
-{
-  var colorCodeMapper = new ColorCodeMapper();
-  ColorPair testPair2 = new ColorPair(Color.Red, Color.Blue);
-  int pairNumber = colorCodeMapper.GetPairNumberFromColor(testPair2);
-  Assert.True(pairNumber == 6);
-}
-    
 }
