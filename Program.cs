@@ -1,8 +1,12 @@
 namespace ColorCoding
 {
-  static void Main()
+ class Program
+{
+  public static void Main(string[] args)
   {
-    RunTests();
+    var colorCodeTest = new ColorCodeTester();
+    colorCodeTest.RunTest();
   }
+}
 
 }
